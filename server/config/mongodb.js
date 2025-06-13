@@ -1,16 +1,3 @@
-// import mongoose from "mongoose";
-
-// const connectDB = async () => {
-//   mongoose.connection.on('connected', () => {
-//     console.log("Database Connected");
-//   });
-
-//   await mongoose.connect(`${process.env.MONGODB_URI}/imagify`);
-// };
-
-// export default connectDB;
-
-// config/mongodb.js
 import mongoose from "mongoose";
 
 const connectDB = async () => {
@@ -30,7 +17,7 @@ const connectDB = async () => {
 
   } catch (error) {
     console.error("❌ Failed to connect to MongoDB:", error.message);
-    throw error; // ✅ Ensure server.js can catch it
+    throw error;
   }
 };
 
