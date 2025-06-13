@@ -1,11 +1,37 @@
+// import mongoose from "mongoose";
+
+// const connectDB = async () => {
+//   mongoose.connection.on('connected', () => {
+//     console.log("Database Connected");
+//   });
+
+//   await mongoose.connect(`${process.env.MONGODB_URI}/imagify`);
+// };
+
+// export default connectDB;
+
+// config/mongodb.js
 import mongoose from "mongoose";
 
 const connectDB = async () => {
-  mongoose.connection.on('connected', () => {
-    console.log("Database Connected");
-  });
+  try {
+    await mongoose.connect(`${process.env.MONGODB_URI}/imagify`, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
 
-  await mongoose.connect(`${process.env.MONGODB_URI}/imagify`);
+    mongoose.connection.on('connected', () => {
+      console.log("✅ MongoDB connected successfully");
+    });
+
+    mongoose.connection.on('error', (err) => {
+      console.error("❌ MongoDB connection error:", err);
+    });
+
+  } catch (error) {
+    console.error("❌ Failed to connect to MongoDB:", error.message);
+    throw error; // ✅ Ensure server.js can catch it
+  }
 };
 
 export default connectDB;
