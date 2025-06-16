@@ -6,9 +6,9 @@ import twitter_icon from './twitter_icon.svg'
 import star_icon from './star_icon.svg'
 import rating_star from './rating_star.svg'
 import sample_img_1 from './sample_img_1.png'
-import sample_img_2 from './sample_img_2.png'
-import sample_img_3 from './sample_img_3.png'
-import sample_img_4 from './sample_img_4.png'
+// import sample_img_2 from './sample_img_2.png'
+// import sample_img_3 from './sample_img_3.png'
+// import sample_img_4 from './sample_img_4.png'
 import profile_img_1 from './profile_img_1.png'
 import profile_img_2 from './profile_img_2.png'
 import step_icon_1 from './step_icon_1.svg'
@@ -21,6 +21,13 @@ import star_group from './star_group.png'
 import credit_star from './credit_star.svg'
 import profile_icon from './profile_icon.png'
 
+// New monster images
+import monster_img_1 from './monster_img_1.png'
+import monster_img_2 from './monster_img_2.png'
+import monster_img_3 from './monster_img_3.png'
+import monster_img_4 from './monster_img_4.png'
+import monster_img_5 from './monster_img_5.png'
+import monster_img_6 from './monster_img_6.png'
 
 export const assets = {
     logo,
@@ -31,16 +38,26 @@ export const assets = {
     star_icon,
     rating_star,
     sample_img_1,
-    sample_img_2,
-    sample_img_3,
-    sample_img_4,
+    // sample_img_2,
+    // sample_img_3,
+    // sample_img_4,
     email_icon,
     lock_icon,
     cross_icon,
     star_group,
     credit_star,
-    profile_icon
-}
+    profile_icon,
+
+    // Grouped monster images
+    monster_images: [
+        monster_img_1,
+        monster_img_2,
+        monster_img_3,
+        monster_img_4,
+        monster_img_5,
+        monster_img_6,
+    ]
+};
 
 export const stepsData = [
     {
