@@ -75,27 +75,34 @@ const Headder = () => {
       >
         <Swiper
           modules={[Autoplay]}
-          autoplay={{ delay: 3000, disableOnInteraction: false }}
-          spaceBetween={0}
-          loop={true}
-          speed={1500} // smooth transition speed (ms)
-          breakpoints={{
-            320: { slidesPerView: 1 },
-            640: { slidesPerView: 2 },
-            768: { slidesPerView: 3 },
-            1024: { slidesPerView: 4 }
+          autoplay={{
+            delay: 0, // no delay between transitions
+            disableOnInteraction: false,
           }}
+          speed={3000} // smooth speed
+          loop={true}
+          spaceBetween={16}
+          grabCursor={true}
+          breakpoints={{
+            320: { slidesPerView: 2 },
+            640: { slidesPerView: 3 },
+            768: { slidesPerView: 4 },
+            1024: { slidesPerView: 5 },
+          }}
+          className="mySwiper"
         >
           {assets.monster_images.map((img, index) => (
-            <SwiperSlide key={index} className="flex justify-center">
+            <SwiperSlide key={index}>
               <img
                 src={img}
                 alt={`slide-${index}`}
-                className="rounded w-[170px] h-auto object-cover transition-transform duration-300 hover:scale-105"
+                className="w-[170px] h-[170px] object-cover rounded-xl shadow-lg border-2 border-transparent"
+
               />
             </SwiperSlide>
-          ))}
+          ))} 
         </Swiper>
+
 
       </motion.div>
 
